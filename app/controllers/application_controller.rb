@@ -8,8 +8,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/museums/:id' do
-    artists = Artist.find_by(museum_id: params[:id])
-    artists.to_json
+    museum = Museum.find(params[:id])
+    museum.to_json(include: :artists)
   end
 
   get '/artists' do
