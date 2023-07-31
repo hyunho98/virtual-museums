@@ -21,4 +21,14 @@ class ApplicationController < Sinatra::Base
     artist = Artist.find(params[:id])
     artist.to_json(include: :art_pieces)
   end
+
+  get '/artists/:id/by_date' do
+    art_pieces = ArtPiece.artist_by_date(params[:id])
+    art_pieces.to_json
+  end
+
+  get '/art_pieces/by_date' do
+    art_pieces = ArtPiece.by_date
+    art_pieces.to_json
+  end
 end
