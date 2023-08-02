@@ -5,11 +5,11 @@ Hello! Welcome to virtual-museums! As the world continues to transition from ana
 ## Features
 
 Within virtual-museums you can:
--Create, read, update and delete Museums/Artists/Art Pieces
--Define the type of art that an artist creates
--Categorize different kinds of art using different museums
--Create spaces with limited capacity to feature a rotation of artists/art styles
--Create a space for both AI generated and human made digital art
+- Create, read, update and delete Museums/Artists/Art Pieces
+- Define the type of art that an artist creates
+- Categorize different kinds of art using different museums
+- Create spaces with limited capacity to feature a rotation of artists/art styles
+- Create a space for both AI generated and human made digital art
 
 ## Backend Installation
 
