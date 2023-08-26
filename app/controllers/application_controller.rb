@@ -27,6 +27,11 @@ class ApplicationController < Sinatra::Base
     art_pieces.to_json
   end
 
+  get '/art_pieces' do
+    art_pieces = ArtPiece.all
+    art_pieces.to_json
+  end
+
   get '/art_pieces/:id' do
     art_piece = ArtPiece.find(params[:id])
     art_piece.to_json
@@ -36,7 +41,8 @@ class ApplicationController < Sinatra::Base
   post '/museums' do
     museum = Museum.create(
       name: params[:name],
-      capacity: params[:capacity]
+      capacity: params[:capacity],
+      image_link: params[:image_link]
     )
     museum.to_json
   end
@@ -45,7 +51,8 @@ class ApplicationController < Sinatra::Base
     artist = Artist.create(
       name: params[:name],
       style: params[:style],
-      museum_id: params[:museum_id]
+      museum_id: params[:museum_id],
+      image_link: params[:image_link]
     )
     artist.to_json
   end
@@ -55,7 +62,8 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       description: params[:description],
       completion_date: params[:completion_date],
-      artist_id: params[:artist_id]
+      artist_id: params[:artist_id],
+      image_link: params[:image_link]
     )
     art_piece.to_json
   end
